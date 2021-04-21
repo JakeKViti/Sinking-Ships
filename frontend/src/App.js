@@ -1,6 +1,7 @@
 import './App.css';
 import Board from './components/Board.js'
 import Home from './components/Home.js'
+import Rules from './components/Rules.js'
 import NavBar from './components/NavBar.js'
 import {
   BrowserRouter as Router,
@@ -15,6 +16,7 @@ function App() {
         <NavBar />
         <Route exact path="/" component={Home} />
         <Route exact path="/board" component={Board} />
+        <Route exact path="/rules" component={Rules} />
       </header>
     </div>
     </Router>
