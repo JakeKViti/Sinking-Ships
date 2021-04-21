@@ -2,6 +2,7 @@ import './App.css';
 import Board from './components/Board.js'
 import Home from './components/Home.js'
 import Rules from './components/Rules.js'
+import Leaderboard from './components/Leaderboard.js'
 import NavBar from './components/NavBar.js'
 import {
   BrowserRouter as Router,
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/board" component={Board} />
         <Route exact path="/rules" component={Rules} />
+        <Route exact path="/leaderboard" component={Leaderboard} />
       </header>
     </div>
     </Router>

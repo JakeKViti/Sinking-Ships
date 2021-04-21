@@ -8,6 +8,7 @@ export default class NavBar extends React.Component {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/board">Board</NavLink>
         <NavLink to="/rules">Rules</NavLink>
+        <NavLink to="/leaderboard">Leaderboard</NavLink>
         </div>
         )
     }
