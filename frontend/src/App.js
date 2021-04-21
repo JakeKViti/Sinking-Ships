@@ -1,5 +1,6 @@
 import './App.css';
 import Board from './components/Board.js'
+import Home from './components/Home.js'
 import NavBar from './components/NavBar.js'
 import {
   BrowserRouter as Router,
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NavBar />
+        <Route exact path="/" component={Home} />
         <Route exact path="/board" component={Board} />
       </header>
     </div>
