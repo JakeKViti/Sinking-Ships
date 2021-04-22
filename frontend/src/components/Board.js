@@ -32,11 +32,13 @@ class Board extends Component {
     }
 
     renderBoard(data) {
+        
         return data.map((datarow) => {
           return datarow.map((dataitem) => {
             return (
-              <div>
-                <Cell/>
+              <div key={dataitem.x * datarow.length + dataitem.y}>
+                <Cell
+                 onClick={() => this.handleCellClick(dataitem.x, dataitem.y)}/>
               </div>
             );
           })
@@ -44,7 +46,8 @@ class Board extends Component {
       }
 
       handleCellClick(x, y) {
-        alert("test")
+        alert(x)
+        alert(y)
       }
       
 

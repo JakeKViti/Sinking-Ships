@@ -15,7 +15,8 @@ class Cell extends Component {
       render() {
         const {value, onClick} = this.props;    
         return (
-          <div>
+          <div
+          onClick={onClick}>
               :^)
           </div>
         );
