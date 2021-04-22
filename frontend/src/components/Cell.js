@@ -22,7 +22,9 @@ class Cell extends Component {
           </div>
         );
       }
-    }    
+    }
+    
+    
 
 
 export default Cell;

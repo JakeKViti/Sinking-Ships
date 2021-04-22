@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Cell from './Cell.js'
 
 
 class Board extends Component {
@@ -46,7 +47,24 @@ class Board extends Component {
         return data;
     }
 
-    
+    renderBoard(data) {
+        return data.map((datarow) => {
+          return datarow.map((dataitem) => {
+            return (
+              <div 
+                key={dataitem.x * datarow.length + dataitem.y}>
+                <Cell
+                  onClick={() => this.handleCellClick(dataitem.x, dataitem.y)}
+                  cMenu={(e) => this.handleContextMenu(e, dataitem.x, dataitem.y)}
+                  value={dataitem}
+                />
+                {(datarow[datarow.length - 1] === dataitem) ? <div className="clear" /> : ""}
+              </div>
+            );
+          })
+        });
+      }
+      
       
       
 }

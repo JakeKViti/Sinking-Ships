@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Board from './components/Board.js'
+import Board from './Board.js'
+
 
 class Game extends Component {
     state = {
