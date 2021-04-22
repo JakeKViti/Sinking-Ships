@@ -2,28 +2,13 @@ import React, { Component } from 'react';
 import Cell from './Cell.js'
 
 
+
 class Board extends Component {
     state = {
         boardData: this.initBoardData(this.props.height, this.props.width),
-        gameStatus: false
-    }
-
-    render() {
-        return (
-            <div className="board">
-              <div className="game-info">
-                <br />
-                <span className="info">
-                  {this.state.gameStatus}
-                </span>
-              </div>
-              { this.renderBoard(this.state.boardData)}
-            </div>
-        );
-        
+        gameStatus: false,
     }
     
-
     createEmptyArray(height, width) {
         let data = []
         
@@ -43,7 +28,6 @@ class Board extends Component {
 
     initBoardData(height, width) {
         let data = this.createEmptyArray(height, width);
-        
         return data;
     }
 
@@ -51,22 +35,32 @@ class Board extends Component {
         return data.map((datarow) => {
           return datarow.map((dataitem) => {
             return (
-              <div 
-                key={dataitem.x * datarow.length + dataitem.y}>
-                <Cell
-                  onClick={() => this.handleCellClick(dataitem.x, dataitem.y)}
-                  cMenu={(e) => this.handleContextMenu(e, dataitem.x, dataitem.y)}
-                  value={dataitem}
-                />
-                {(datarow[datarow.length - 1] === dataitem) ? <div className="clear" /> : ""}
+              <div>
+                <Cell/>
               </div>
             );
           })
         });
       }
+
+      handleCellClick(x, y) {
+        alert("test")
+      }
       
-      
-      
+
+      render() {
+        return (
+            <div className="board">
+              <div className="game-info">
+                <br />
+                <span className="info">
+                  {this.state.gameStatus}
+                </span>
+              </div>
+              { this.renderBoard(this.state.boardData)}
+            </div>
+        );
+    }
 }
 
 

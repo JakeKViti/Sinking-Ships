@@ -7,7 +7,7 @@ class Cell extends Component {
         if (value.isHit) {
           return "X";
         }
-        if (value.IsMiss === 0) {
+        if (value.IsMiss) {
           return "O";
         }
       }
@@ -15,10 +15,8 @@ class Cell extends Component {
       render() {
         const {value, onClick} = this.props;    
         return (
-          <div
-            onClick={this.props.onClick}
-          >
-          {this.getValue()}
+          <div>
+              :^)
           </div>
         );
       }

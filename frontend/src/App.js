@@ -1,5 +1,5 @@
 import './App.css';
-import Board from './components/Board.js'
+import Game from './components/Game.js'
 import Home from './components/Home.js'
 import Rules from './components/Rules.js'
 import Leaderboard from './components/Leaderboard.js'
@@ -16,7 +16,7 @@ function App() {
       <header className="App-header">
         <NavBar />
         <Route exact path="/" component={Home} />
-        <Route exact path="/board" component={Board} />
+        <Route exact path="/game" component={Game} />
         <Route exact path="/rules" component={Rules} />
         <Route exact path="/leaderboard" component={Leaderboard} />
       </header>
@@ -26,3 +26,4 @@ function App() {
 }
 
 export default App;
+ 
