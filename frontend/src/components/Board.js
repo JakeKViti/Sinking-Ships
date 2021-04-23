@@ -54,12 +54,6 @@ class Board extends Component {
       render() {
         return (
             <div className="board">
-              <div className="game-info">
-                <br />
-                <span className="info">
-                  {this.state.gameStatus}
-                </span>
-              </div>
               { this.renderBoard(this.state.boardData)}
             </div>
         );
