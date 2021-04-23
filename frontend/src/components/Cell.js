@@ -14,10 +14,12 @@ class Cell extends Component {
 
       render() {
         const {value, onClick} = this.props;    
+        let className = "cell"
         return (
           <div
-          onClick={onClick}>
-              :^)
+          onClick={onClick}
+          className={className}>
+            
           </div>
         );
       }
