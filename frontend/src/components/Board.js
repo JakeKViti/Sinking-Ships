@@ -69,6 +69,7 @@ class Board extends Component {
       }
 
       handleCellClick(data) {
+        let updatedData = this.state.boardData;
         data.revealed = true
         if (data.ship === true){
           data.isHit = true
@@ -76,7 +77,11 @@ class Board extends Component {
         if (data.ship === false){
           data.isMiss = true
         }
+        this.setState({
+          boardData: updatedData,
+        });
       }
+
       
 
       render() {
