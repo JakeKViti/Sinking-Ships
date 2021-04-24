@@ -67,6 +67,18 @@ class Board extends Component {
         });
       }
 
+      revealBoard() {
+        let updatedData = this.state.boardData;
+        updatedData.map((datarow) => {
+          datarow.map((dataitem) => {
+            dataitem.revealed = true;
+          });
+        });
+        this.setState({
+          boardData: updatedData
+        })
+      }
+
       handleCellClick(data) {
         let updatedData = this.state.boardData;
         let updatedClicks = this.state.clicks + 1;
@@ -81,6 +93,7 @@ class Board extends Component {
         }
         if (updatedSquidCount === 0){
           alert("Game Over!")
+          this.revealBoard()
         }
         this.setState({
           boardData: updatedData,
