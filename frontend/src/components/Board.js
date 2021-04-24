@@ -66,8 +66,13 @@ class Board extends Component {
       }
 
       handleCellClick(data) {
-        alert(data.ship)
-        
+        if (data.ship === true){
+          data.isHit = true
+        }
+        if (data.ship === false){
+          data.isMiss = true
+        }
+        debugger
       }
       
 
