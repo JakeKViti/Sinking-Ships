@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Cell from './Cell.js'
 
-
-
 class Board extends Component {
     state = {
         boardData: this.initBoardData(this.props.height, this.props.width),
-        gameStatus: false,
+        gameWon: false,
+        clicks: 0,
+        remainingSquids: 9
     }
     
     createEmptyArray(height, width) {
@@ -53,7 +53,6 @@ class Board extends Component {
     }
 
     renderBoard(data) {
-        
         return data.map((datarow) => {
           return datarow.map((dataitem) => {
             return (
@@ -70,15 +69,23 @@ class Board extends Component {
 
       handleCellClick(data) {
         let updatedData = this.state.boardData;
+        let updatedClicks = this.state.clicks + 1;
+        let updatedSquidCount = this.state.remainingSquids
         data.revealed = true
         if (data.ship === true){
           data.isHit = true
+          updatedSquidCount -= 1
         }
         if (data.ship === false){
           data.isMiss = true
         }
+        if (updatedSquidCount === 0){
+          alert("Game Over!")
+        }
         this.setState({
           boardData: updatedData,
+          clicks: updatedClicks,
+          remainingSquids: updatedSquidCount 
         });
       }
 

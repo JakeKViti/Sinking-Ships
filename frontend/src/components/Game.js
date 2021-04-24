@@ -15,8 +15,7 @@ class Game extends Component {
             <Board height={height} width={width} />
           </div>
         );
-      }
-    
-}
+      }    
+    }
 
 export default Game;
