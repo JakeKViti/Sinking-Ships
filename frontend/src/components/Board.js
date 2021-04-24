@@ -19,7 +19,8 @@ class Board extends Component {
                     x: i,
                     y: j,
                     isHit: false,
-                    isMiss: false
+                    isMiss: false,
+                    ship: false
                 }
             }
         }
@@ -27,15 +28,13 @@ class Board extends Component {
     }
 
     placeShips(data, height, width) {
-      let randomx, randomy = 0;
-      let smallShip = 0
-      while (smallShip < 2) {
-        randomx = this.getRandomNumber(width);
-        randomy = this.getRandomNumber(height);
-        debugger
-        }
-      }
-      
+      //let randomx, randomy = 0;
+      //  randomx = this.getRandomNumber(width);
+      //  randomy = this.getRandomNumber(height);
+      //  debugger
+      //  data[randomx][randomy].ship = true;
+      //  data[randomx+1][randomy].ship = true;
+      //  data[randomx+2][randomy].ship = true;
       return (data);
     }
 
@@ -54,19 +53,20 @@ class Board extends Component {
         
         return data.map((datarow) => {
           return datarow.map((dataitem) => {
+            debugger
             return (
               <div key={dataitem.x * datarow.length + dataitem.y}>
                 <Cell
-                 onClick={() => this.handleCellClick(dataitem.x, dataitem.y)}/>
+                 onClick={() => this.handleCellClick(dataitem)}/>
               </div>
             );
           })
         });
       }
 
-      handleCellClick(x, y) {
-        alert(x)
-        alert(y)
+      handleCellClick(data) {
+        alert(data.ship)
+        
       }
       
 
