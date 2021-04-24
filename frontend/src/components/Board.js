@@ -28,13 +28,15 @@ class Board extends Component {
     }
 
     placeShips(data, height, width) {
-      //let randomx, randomy = 0;
-      //  randomx = this.getRandomNumber(width);
-      //  randomy = this.getRandomNumber(height);
-      //  debugger
-      //  data[randomx][randomy].ship = true;
-      //  data[randomx+1][randomy].ship = true;
-      //  data[randomx+2][randomy].ship = true;
+      data[1][1].ship = true;
+      data[1][2].ship = true;
+      data[4][2].ship = true;
+      data[4][3].ship = true;
+      data[4][4].ship = true;
+      data[6][1].ship = true;
+      data[6][2].ship = true;
+      data[6][3].ship = true;
+      data[6][4].ship = true;
       return (data);
     }
 
@@ -53,7 +55,6 @@ class Board extends Component {
         
         return data.map((datarow) => {
           return datarow.map((dataitem) => {
-            debugger
             return (
               <div key={dataitem.x * datarow.length + dataitem.y}>
                 <Cell
