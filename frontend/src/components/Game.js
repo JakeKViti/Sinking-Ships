@@ -4,8 +4,8 @@ import Board from './Board.js'
 
 class Game extends Component {
     state = {
-        height: 10,
-        width: 10
+        height: 20,
+        width: 20
     }
 
     render() {
