@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 
 class Cell extends Component { 
     getValue() {
-        const {value} = this.props;
+      const { value } = this.props;
 
+        if (!value.revealed){
+          return "?"
+        }
         if (value.isHit) {
           return "X";
         }
@@ -13,13 +16,12 @@ class Cell extends Component {
       }
 
       render() {
-        const {value, onClick} = this.props;    
         let className = "cell"
         return (
           <div
-          onClick={onClick}
+          onClick={this.props.onClick}
           className={className}>
-            
+            {this.getValue()} 
           </div>
         );
       }

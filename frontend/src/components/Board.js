@@ -20,7 +20,8 @@ class Board extends Component {
                     y: j,
                     isHit: false,
                     isMiss: false,
-                    ship: false
+                    ship: false,
+                    revealed: false
                 }
             }
         }
@@ -58,7 +59,9 @@ class Board extends Component {
             return (
               <div key={dataitem.x * datarow.length + dataitem.y}>
                 <Cell
-                 onClick={() => this.handleCellClick(dataitem)}/>
+                 onClick={() => this.handleCellClick(dataitem)}
+                 value={dataitem}
+                 />
               </div>
             );
           })
@@ -66,13 +69,13 @@ class Board extends Component {
       }
 
       handleCellClick(data) {
+        data.revealed = true
         if (data.ship === true){
           data.isHit = true
         }
         if (data.ship === false){
           data.isMiss = true
         }
-        debugger
       }
       
 
