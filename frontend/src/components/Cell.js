@@ -8,10 +8,10 @@ class Cell extends Component {
           return "?"
         }
         if (value.isHit) {
-          return "X";
+          return "🦑";
         }
-        if (value.IsMiss) {
-          return "O";
+        if (value.isMiss) {
+          return "💦";
         }
       }
 
