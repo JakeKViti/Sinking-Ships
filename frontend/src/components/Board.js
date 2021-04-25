@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Cell from './Cell.js'
+import Info from './Info.js'
 
 class Board extends Component {
     state = {
@@ -67,6 +68,15 @@ class Board extends Component {
         });
       }
 
+      renderInfo(clicks) {
+        return (
+          <div>
+            <Info
+            value={clicks}/>
+          </div>
+        )
+      }
+
       revealBoard() {
         let updatedData = this.state.boardData;
         updatedData.map((datarow) => {
@@ -107,6 +117,7 @@ class Board extends Component {
       render() {
         return (
             <div className="board">
+              { this.renderInfo(this.state.clicks)}
               { this.renderBoard(this.state.boardData)}
             </div>
         );
