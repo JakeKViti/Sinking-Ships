@@ -4,6 +4,7 @@ import Home from './components/Home.js'
 import Rules from './components/Rules.js'
 import Leaderboard from './components/Leaderboard.js'
 import NavBar from './components/NavBar.js'
+import HighscoreForm from './components/HighscoreForm.js'
 import {
   BrowserRouter as Router,
   Route
