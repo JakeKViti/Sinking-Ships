@@ -30,18 +30,18 @@ class Board extends Component {
     }
 
     placeShips(data, height, width) {
-      //data[0][0].ship = true;
-      //data[0][1].ship = true;
-      //data[1][0].ship = true;
-      //data[1][1].ship = true;
-      //data[1][2].ship = true;
-      //data[2][0].ship = true;
-      //data[2][1].ship = true;
-      //data[2][2].ship = true;
-      //data[2][3].ship = true;
-      this.getRandomNumber(data, 2)
-      this.getRandomNumber(data, 3)
-      this.getRandomNumber(data, 4)
+      data[0][0].ship = true;
+      data[0][1].ship = true;
+      data[1][0].ship = true;
+      data[1][1].ship = true;
+      data[1][2].ship = true;
+      data[2][0].ship = true;
+      data[2][1].ship = true;
+      data[2][2].ship = true;
+      data[2][3].ship = true;
+      //this.getRandomNumber(data, 2)
+      //this.getRandomNumber(data, 3)
+      //this.getRandomNumber(data, 4)
       return (data);
     }
 
