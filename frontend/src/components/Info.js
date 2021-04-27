@@ -12,13 +12,13 @@ export default class Info extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
       }
     
-      handleChange(event) {
-        this.setState({value: this.state.value});
-        //this will save user initals 
-      }
-    
+      handleChange = (event) => {
+        this.setState({
+            value: event.target.value
+        });
+    }
       handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
+        alert(this.state.value + ', you have a score of ' + this.state.clicks + ' clicks!');
         event.preventDefault();
         //This will submit to backend
       }
@@ -31,7 +31,10 @@ export default class Info extends React.Component {
             </label>
             <label>
               Initials:
-              <input type="text" value={this.state.value} onChange={this.handleChange} />
+              <input 
+                type="text" 
+                onChange={this.handleChange} 
+             />
             </label>
             <input type="submit" value="Submit" />
           </form>
