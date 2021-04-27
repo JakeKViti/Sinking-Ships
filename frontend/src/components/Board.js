@@ -72,7 +72,7 @@ class Board extends Component {
         return (
           <div>
             <Info
-            value={clicks}/>
+            click={clicks}/>
           </div>
         )
       }
@@ -94,7 +94,7 @@ class Board extends Component {
         let updatedClicks = this.state.clicks + 1;
         let updatedSquidCount = this.state.remainingSquids
         data.revealed = true
-        if (data.ship === true){
+        if (data.ship === true && data.isHit === false){
           data.isHit = true
           updatedSquidCount -= 1
         }

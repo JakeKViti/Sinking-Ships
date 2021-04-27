@@ -4,8 +4,8 @@ export default class Info extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: this.props.value,
-            initials: ''
+            clicks: this.props.click,
+            value: ''
         };
         
         this.handleChange = this.handleChange.bind(this);
@@ -13,11 +13,12 @@ export default class Info extends React.Component {
       }
     
       handleChange(event) {
-        this.setState({initials: this.state.initials});
+        this.setState({value: this.state.value});
         //this will save user initals 
       }
     
       handleSubmit(event) {
+        alert('A name was submitted: ' + this.state.value);
         event.preventDefault();
         //This will submit to backend
       }
@@ -26,11 +27,11 @@ export default class Info extends React.Component {
         return (
           <form onSubmit={this.handleSubmit}>
               <label>
-              Amount of clicks: {this.props.value} {"        | "}     
+              Amount of clicks: {this.props.click} {"        | "}     
             </label>
             <label>
               Initials:
-              <input type="text" value={this.state.initials} onChange={this.handleChange} />
+              <input type="text" value={this.state.value} onChange={this.handleChange} />
             </label>
             <input type="submit" value="Submit" />
           </form>
