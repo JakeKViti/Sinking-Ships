@@ -1,6 +1,7 @@
 export function fetchLeaderboard() {
+    
     return () => {
-        fetch(`http://localhost:3001/users`, {
+        fetch(`http://localhost:3001/api/v1/users`, {
             method: "GET",
             headers: {
               Accept: "application/json",
@@ -8,6 +9,7 @@ export function fetchLeaderboard() {
             },
             body: JSON.stringify()
           })
-            .then(res => res.json())
+          .then(response => response.json())
+          .then(data => console.log(data));
     };
   }
