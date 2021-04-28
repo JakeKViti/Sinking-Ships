@@ -4,11 +4,10 @@ export default function manageLeaderboard(state = {
     switch (action.type) {
   
        
-          case 'ADD_ENTRIES':
+          case 'SEND_SCORE':
             return {
               ...state,
-              entries: action.entries,
-              requesting: false
+              entries: action.entries
             }
        
           default:

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { sendScore } from "../actions/sendScore";
 import { connect } from 'react-redux'
 
-class Info extends React.Component {
+export class Info extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -48,8 +48,14 @@ class Info extends React.Component {
       }
 };
 
-function mapDispatchToProps(dispatch){
-  return { sendEntry: (entry) => dispatch(sendScore(entry)) }
-}
+const mapDispatchToProps = dispatch => {
+  return {
+    sendScore: (entry) => {
+      dispatch(sendScore(entry))
+    }
+  };
+};
 
-export default connect(null, mapDispatchToProps)(Info)
+export default connect(null, mapDispatchToProps)(Info);
+
+//export default Info
