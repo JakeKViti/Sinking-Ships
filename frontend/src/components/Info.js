@@ -14,12 +14,13 @@ export default class Info extends React.Component {
     
       handleChange = (event) => {
         this.setState({
-            value: event.target.value
+            value: event.target.value,
+            clicks: this.props.click
         });
     }
       handleSubmit(event) {
-        alert(this.state.value + ', you have a score of ' + this.state.clicks + ' clicks!');
         event.preventDefault();
+        alert(this.state.value + ', you have a score of ' + this.state.clicks + ' clicks!');
         //This will submit to backend
       }
     
