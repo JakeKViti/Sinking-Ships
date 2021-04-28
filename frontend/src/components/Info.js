@@ -24,7 +24,7 @@ export class Info extends Component {
         debugger
         event.preventDefault();
         alert(this.state.value + ', you have a score of ' + this.state.clicks + ' clicks!');
-        const entry =  {initial: this.state.value, clicks: this.state.clicks}
+        const entry =  {users: {initials: this.state.value, clicks: this.state.clicks}}
         this.props.sendScore(entry)
         //This will submit to backend
       }
