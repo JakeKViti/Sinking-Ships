@@ -1,6 +1,8 @@
 import React from 'react';
+import { sendScore } from "../actions/sendScore";
+import { connect } from 'react-redux'
 
-export default class Info extends React.Component {
+class Info extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,8 +21,11 @@ export default class Info extends React.Component {
         });
     }
       handleSubmit(event) {
+        debugger
         event.preventDefault();
         alert(this.state.value + ', you have a score of ' + this.state.clicks + ' clicks!');
+        const entry =  {initial: this.state.value, clicks: this.state.clicks}
+        this.props.sendScore(entry)
         //This will submit to backend
       }
     
@@ -43,3 +48,8 @@ export default class Info extends React.Component {
       }
 };
 
+function mapDispatchToProps(dispatch){
+  return { sendEntry: (entry) => dispatch(sendScore(entry)) }
+}
+
+export default connect(null, mapDispatchToProps)(Info)
