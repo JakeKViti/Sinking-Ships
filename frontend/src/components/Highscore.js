@@ -12,7 +12,7 @@ class Highscore extends React.Component {
               {this.props.entries.map(users => 
             <div key={users.id}>
             <li>
-                {users.initials} {users.clicks}
+               Rank {users.id}: {users.initials} with {users.clicks} clicks
             </li>
             </div>)}
         </div>
