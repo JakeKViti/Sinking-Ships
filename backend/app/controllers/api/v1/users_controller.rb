@@ -1,6 +1,6 @@
 class Api::V1::UsersController < ApplicationController
     def index
-        users = User.all
+        users = User.top20
         render json: users
     end
 
