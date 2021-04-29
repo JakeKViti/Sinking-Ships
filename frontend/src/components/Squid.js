@@ -1,7 +1,8 @@
 import React from 'react';
 
 export default class Squid extends React.Component {
-    placeShips(data, height, width) {
+    placeSquids(data) {
+      debugger
         data[0][0].ship = true;
         data[0][1].ship = true;
         data[1][0].ship = true;
@@ -21,6 +22,9 @@ export default class Squid extends React.Component {
         let x = Math.floor((Math.random() * 1000) + 1) % 17;
         let y = Math.floor((Math.random() * 1000) + 1) % 17;
         let ori = Math.floor((Math.random() * 1000) + 1) % 2;
+        if (data[x][y].ship === true){
+          this.getRandomNumber(data, numbers)
+        }
         for (let i = 0; i < numbers; i++) {
           if (ori === 1) {
             data[x+i][y].ship = true
@@ -32,10 +36,11 @@ export default class Squid extends React.Component {
       }
 
     render() {
+      debugger
         return (
-            <div>
-            "Squid.js"
-            </div>
+          <div>
+            {this.placeSquids(this.props.boardInfo)}
+          </div>
         );
     }
 };

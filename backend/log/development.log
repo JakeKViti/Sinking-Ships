@@ -11379,3 +11379,52 @@ Processing by Api::V1::UsersController#index as */*
 Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.5ms | Allocations: 3454)
 
 
+Started GET "/api/v1/users" for ::1 at 2021-04-29 13:44:43 -0400
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY clicks asc LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 1.4ms | Allocations: 3455)
+
+
+Started GET "/api/v1/users" for ::1 at 2021-04-29 13:46:09 -0400
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY clicks asc LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 102ms (Views: 101.2ms | ActiveRecord: 0.8ms | Allocations: 3458)
+
+
+Started GET "/api/v1/users" for ::1 at 2021-04-29 13:46:17 -0400
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY clicks asc LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.4ms | Allocations: 3454)
+
+
+Started GET "/api/v1/users" for ::1 at 2021-04-29 13:48:40 -0400
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY clicks asc LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 102ms (Views: 99.7ms | ActiveRecord: 1.1ms | Allocations: 3454)
+
+
+Started GET "/api/v1/users" for ::1 at 2021-04-29 13:49:02 -0400
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY clicks asc LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 33ms (Views: 29.3ms | ActiveRecord: 0.6ms | Allocations: 3454)
+
+
+Started GET "/api/v1/users" for ::1 at 2021-04-29 13:50:42 -0400
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY clicks asc LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 48ms (Views: 46.9ms | ActiveRecord: 0.4ms | Allocations: 3454)
+
+
+Started GET "/api/v1/users" for ::1 at 2021-04-29 13:53:19 -0400
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY clicks asc LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 21ms (Views: 16.0ms | ActiveRecord: 0.5ms | Allocations: 3454)
+
+

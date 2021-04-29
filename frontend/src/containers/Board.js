@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Cell from './Cell.js'
-import Info from './Info.js'
+import Cell from '../components/Cell.js'
+import Info from '../components/Info.js'
+import Squid from '../components/Squid.js'
 
 class Board extends Component {
     state = {
