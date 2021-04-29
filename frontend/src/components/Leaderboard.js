@@ -1,27 +1,42 @@
 import React from 'react';
 import { fetchLeaderboard } from "../actions/fetchLeaderboard";
 import { connect } from 'react-redux'
+import Highscore from './Highscore.js'
+
 
 
 class Leaderboard extends React.Component {
-    
-    render() {
-        return (
-            "Future Leaderboard here! Will be able to save to backend and ranked by time or shots fired"
-        );
-    }
 
     componentDidMount(){
-        this.props.fetchLeaderboard();
+       this.props.fetchLeaderboard()
+    }
+
+    handleLoading = () => {
+        console.log(this.props.loading)
+        if(this.props.loading) {
+          return <div>Loading...</div>
+        } else {
+          return <Highscore entries={this.props.entries} />
+        }
+    }
+
+    render() {
+        debugger
+        return (
+            <div className="highscores">
+              <h1>TOP SCORES!</h1>
+              {this.handleLoading()}
+            </div>
+          );
     }
 };
 
-function mapDispatchToProps(dispatch){
-    return { fetchLeaderboard: () => dispatch(fetchLeaderboard()) }
+const mapDispatchToProps = state => {
+    return {
+      entries: state.entries,
+      loading: state.loading
+    }
   }
 
-  function mapStateToProps(state){
-    return {leaderboard: state.leaderboard}
-  }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Leaderboard)
+  export default connect(mapDispatchToProps, { fetchLeaderboard })(Leaderboard)

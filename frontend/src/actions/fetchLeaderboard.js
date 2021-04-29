@@ -1,15 +1,10 @@
-export function fetchLeaderboard() {
-    
-    return () => {
-        fetch(`http://localhost:3001/api/v1/users`, {
-            method: "GET",
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify()
-          })
-          .then(response => response.json())
-          .then(data => console.log(data));
-    };
+export const fetchLeaderboard = () => {
+    return (dispatch) => {
+      dispatch({ type: 'LOADING_LEADERBOARD'})
+      fetch('http://localhost:3001/api/v1/users').then(response => {
+        return response.json()
+      }).then(responseJSON => {debugger
+        dispatch({ type: 'ADD_ENTRIES', entires: responseJSON.images })
+      })
+    }
   }

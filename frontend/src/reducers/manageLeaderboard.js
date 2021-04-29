@@ -1,12 +1,20 @@
 export default function manageLeaderboard(state = {
-    entries: []
+    entries: [],
+    loading: false
   }, action) {
     switch (action.type) {
-        case 'FETCH_LEADERBOARD':
+      case 'LOADING_LEADERBOARD':
         return {
           ...state,
-          leaderboard: [...state.entries],
-        }       
+          entries: [...state.entries],
+          loading: true
+        }
+        case 'ADD_ENTRIES':
+      return {
+        ...state,
+        entries: action.entries,
+        loading: false
+      }       
           case 'SEND_SCORE':
             return {
               ...state,
