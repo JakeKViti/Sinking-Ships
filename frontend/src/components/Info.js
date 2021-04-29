@@ -39,6 +39,8 @@ export class Info extends Component {
               <input 
                 type="text" 
                 onChange={this.handleChange} 
+                size="3"
+                maxlength="3"
              />
             </label>
             <input type="submit" value="Submit" />
