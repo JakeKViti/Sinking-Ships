@@ -21,7 +21,6 @@ export class Info extends Component {
         });
     }
       handleSubmit(event) {
-        debugger
         event.preventDefault();
         alert(this.state.value + ', you have a score of ' + this.state.clicks + ' clicks!');
         const entry =  {users: {initials: this.state.value, clicks: this.state.clicks}}

@@ -9,7 +9,12 @@ class Highscore extends React.Component {
     render() {
       return (
         <div>
-          {this.listLeaders()}
+              {this.props.entries.map(users => 
+            <div key={users.id}>
+            <li>
+                {users.initials} {users.clicks}
+            </li>
+            </div>)}
         </div>
       )
     }

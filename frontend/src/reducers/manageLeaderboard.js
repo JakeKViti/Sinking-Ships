@@ -12,7 +12,7 @@ export default function manageLeaderboard(state = {
         case 'ADD_ENTRIES':
       return {
         ...state,
-        entries: action.entries,
+        entries: action.payload,
         loading: false
       }       
           case 'SEND_SCORE':

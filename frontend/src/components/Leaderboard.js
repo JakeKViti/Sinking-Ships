@@ -12,16 +12,13 @@ class Leaderboard extends React.Component {
     }
 
     handleLoading = () => {
-        console.log(this.props.loading)
-        if(this.props.loading) {
-          return <div>Loading...</div>
-        } else {
-          return <Highscore entries={this.props.entries} />
+        console.log(this.props.entries)
+        if(this.props.entries.length !== 0) {
+            return <Highscore entries={this.props.entries} />
         }
     }
 
     render() {
-        debugger
         return (
             <div className="highscores">
               <h1>TOP SCORES!</h1>
