@@ -8,6 +8,7 @@ export class Info extends Component {
         this.state = {
             clicks: this.props.boardInfo.clicks,
             gameWon: this.props.boardInfo.gameWon,
+            squidCount: this.props.boardInfo.remainingSquids,
             value: ''
         };
         
@@ -19,7 +20,8 @@ export class Info extends Component {
         this.setState({
             value: event.target.value,
             clicks: this.props.boardInfo.clicks,
-            gameWon: this.props.boardInfo.gameWon
+            gameWon: this.props.boardInfo.gameWon,
+            squidCount:this.props.boardInfo.remainingSquids
         });
     }
       handleSubmit = (event) =>  {
@@ -37,11 +39,14 @@ export class Info extends Component {
 
         return (
           <form onSubmit={this.handleSubmit}>
+            <label>
+              Vere are {this.props.boardInfo.remainingSquids} Squids left {"        | "}     
+            </label>
               <label>
-              Amount of clicks: {this.props.boardInfo.clicks} {"        | "}     
+              Shots Fired: {this.props.boardInfo.clicks} {"        | "}     
             </label>
             <label>
-              Initials:
+              Initials: 
               <input 
                 type="text" 
                 onChange={this.handleChange} 
