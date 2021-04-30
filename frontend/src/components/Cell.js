@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 class Cell extends Component { 
-    getValue() {
+  
+    getValue = () => {
       const { value } = this.props;
 
         if (!value.revealed){
@@ -15,7 +16,7 @@ class Cell extends Component {
         }
       }
 
-      render() {
+      render = () => {
         let className = "cell"
         return (
           <div

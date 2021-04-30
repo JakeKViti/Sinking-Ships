@@ -8,7 +8,7 @@ class Game extends Component {
         width: 20
     }
 
-    render() {
+    render = () => {
         const { height, width } = this.state;
         return (
           <div className="game">

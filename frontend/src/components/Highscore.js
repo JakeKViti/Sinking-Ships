@@ -3,7 +3,7 @@ import React from 'react';
 
 class Highscore extends React.Component {
     
-    render() {
+    render = () => {
       return (
         <div>
               {this.props.entries.map(users => 

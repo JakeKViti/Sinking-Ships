@@ -7,7 +7,7 @@ import Highscore from './Highscore.js'
 
 class Leaderboard extends React.Component {
 
-    componentDidMount(){
+    componentDidMount = () => {
        this.props.fetchLeaderboard()
     }
 
@@ -18,7 +18,7 @@ class Leaderboard extends React.Component {
         }
     }
 
-    render() {
+    render = () => {
         return (
             <div className="highscores">
               <h1>TOP SCORES!</h1>

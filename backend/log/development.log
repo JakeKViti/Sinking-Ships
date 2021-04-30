@@ -11428,3 +11428,27 @@ Processing by Api::V1::UsersController#index as */*
 Completed 200 OK in 21ms (Views: 16.0ms | ActiveRecord: 0.5ms | Allocations: 3454)
 
 
+Started GET "/api/v1/users" for ::1 at 2021-04-29 19:34:34 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY clicks asc LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 39ms (Views: 9.7ms | ActiveRecord: 1.1ms | Allocations: 7799)
+
+
+Started GET "/api/v1/users" for ::1 at 2021-04-29 21:25:36 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY clicks asc LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.6ms | Allocations: 3471)
+
+
+Started GET "/api/v1/users" for ::1 at 2021-04-29 21:27:00 -0400
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY clicks asc LIMIT ?[0m  [["LIMIT", 20]]
+  ↳ app/controllers/api/v1/users_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.4ms | Allocations: 3473)
+
+

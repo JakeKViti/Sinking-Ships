@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Cell from '../components/Cell.js'
 import Info from '../components/Info.js'
-import Squid from '../components/Squid.js'
+import Squid from '../components/Info.js'
 
 class Board extends Component {
     state = {
@@ -11,7 +11,7 @@ class Board extends Component {
         remainingSquids: 9
     }
     
-    createEmptyArray(height, width) {
+    createEmptyArray = (height, width) => {
         let data = []
         
         for (let i = 0; i < height; i++){
@@ -30,7 +30,7 @@ class Board extends Component {
         return data
     }
 
-    placeShips(data, height, width) {
+    placeShips = (data) =>  {
       //data[0][0].ship = true;
       //data[0][1].ship = true;
       //data[1][0].ship = true;
@@ -46,7 +46,7 @@ class Board extends Component {
       return (data);
     }
 
-    getRandomNumber(data, numbers) {
+    getRandomNumber = (data, numbers) => {
       let x = Math.floor((Math.random() * 1000) + 1) % 17;
       let y = Math.floor((Math.random() * 1000) + 1) % 17;
       let ori = Math.floor((Math.random() * 1000) + 1) % 2;
@@ -63,13 +63,13 @@ class Board extends Component {
       return 
     }
 
-    initBoardData(height, width) {
+    initBoardData = (height, width) => {
         let data = this.createEmptyArray(height, width);
-        data = this.placeShips(data, height, width);
+        data = this.placeShips(data);
         return data;
     }
 
-    renderBoard(data) {
+    renderBoard = (data) =>  {
         return data.map((datarow) => {
           return datarow.map((dataitem) => {
             return (
@@ -84,7 +84,7 @@ class Board extends Component {
         });
       }
 
-      renderInfo(clicks) {
+      renderInfo = (clicks) => {
         return (
           <div>
             <Info
@@ -93,7 +93,7 @@ class Board extends Component {
         )
       }
 
-      revealBoard() {
+      revealBoard = () => {
         let updatedData = this.state.boardData;
         updatedData.map((datarow) => {
           datarow.map((dataitem) => {
@@ -105,7 +105,7 @@ class Board extends Component {
         })
       }
 
-      handleCellClick(data) {
+      handleCellClick = (data) => {
         let updatedData = this.state.boardData;
         let updatedClicks = this.state.clicks + 1;
         let updatedSquidCount = this.state.remainingSquids
@@ -130,7 +130,7 @@ class Board extends Component {
 
       
 
-      render() {
+      render = () => {
         return (
             <div className="board">
               { this.renderInfo(this.state.clicks)}
