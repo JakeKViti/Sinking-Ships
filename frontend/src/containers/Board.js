@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Cell from '../components/Cell.js'
 import Info from '../components/Info.js'
-import Squid from '../components/Info.js'
-
 class Board extends Component {
     state = {
         boardData: this.initBoardData(this.props.height, this.props.width),
@@ -11,7 +9,7 @@ class Board extends Component {
         remainingSquids: 9
     }
     
-    createEmptyArray = (height, width) => {
+    createEmptyArray(height, width) {
         let data = []
         
         for (let i = 0; i < height; i++){
@@ -30,23 +28,23 @@ class Board extends Component {
         return data
     }
 
-    placeShips = (data) =>  {
-      //data[0][0].ship = true;
-      //data[0][1].ship = true;
-      //data[1][0].ship = true;
-      //data[1][1].ship = true;
-      //data[1][2].ship = true;
-      //data[2][0].ship = true;
-      //data[2][1].ship = true;
-      //data[2][2].ship = true;
-      //data[2][3].ship = true;
-      this.getRandomNumber(data, 2)
-      this.getRandomNumber(data, 3)
-      this.getRandomNumber(data, 4)
+    placeShips(data)  {
+      data[0][0].ship = true;
+      data[0][1].ship = true;
+      data[1][0].ship = true;
+      data[1][1].ship = true;
+      data[1][2].ship = true;
+      data[2][0].ship = true;
+      data[2][1].ship = true;
+      data[2][2].ship = true;
+      data[2][3].ship = true;
+      //this.getRandomNumber(data, 2)
+      //this.getRandomNumber(data, 3)
+      //this.getRandomNumber(data, 4)
       return (data);
     }
 
-    getRandomNumber = (data, numbers) => {
+    getRandomNumber(data, numbers) {
       let x = Math.floor((Math.random() * 1000) + 1) % 17;
       let y = Math.floor((Math.random() * 1000) + 1) % 17;
       let ori = Math.floor((Math.random() * 1000) + 1) % 2;
@@ -63,7 +61,7 @@ class Board extends Component {
       return 
     }
 
-    initBoardData = (height, width) => {
+    initBoardData(height, width) {
         let data = this.createEmptyArray(height, width);
         data = this.placeShips(data);
         return data;
@@ -84,11 +82,11 @@ class Board extends Component {
         });
       }
 
-      renderInfo = (clicks) => {
+      renderInfo = (data) => {
         return (
           <div>
             <Info
-            click={clicks}/>
+            boardInfo={data}/>
           </div>
         )
       }
@@ -109,6 +107,7 @@ class Board extends Component {
         let updatedData = this.state.boardData;
         let updatedClicks = this.state.clicks + 1;
         let updatedSquidCount = this.state.remainingSquids
+        let winner = false
         data.revealed = true
         if (data.ship === true && data.isHit === false){
           data.isHit = true
@@ -119,10 +118,12 @@ class Board extends Component {
         }
         if (updatedSquidCount === 0){
           alert("Game Over!")
+          winner = true
           this.revealBoard()
         }
         this.setState({
           boardData: updatedData,
+          gameWon: winner,
           clicks: updatedClicks,
           remainingSquids: updatedSquidCount 
         });
@@ -133,7 +134,7 @@ class Board extends Component {
       render = () => {
         return (
             <div className="board">
-              { this.renderInfo(this.state.clicks)}
+              { this.renderInfo(this.state)}
               { this.renderBoard(this.state.boardData)}
             </div>
         );

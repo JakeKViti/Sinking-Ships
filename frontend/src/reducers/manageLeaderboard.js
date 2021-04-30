@@ -18,7 +18,7 @@ export default function manageLeaderboard(state = {
           case 'SEND_SCORE':
             return {
               ...state,
-              entries: action.entries
+              entries: action.payload
             }
        
           default:

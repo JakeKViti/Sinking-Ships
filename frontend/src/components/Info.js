@@ -6,7 +6,8 @@ export class Info extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            clicks: this.props.click,
+            clicks: this.props.boardInfo.clicks,
+            gameWon: this.props.boardInfo.gameWon,
             value: ''
         };
         
@@ -17,21 +18,27 @@ export class Info extends Component {
       handleChange = (event) => {
         this.setState({
             value: event.target.value,
-            clicks: this.props.click
+            clicks: this.props.boardInfo.clicks,
+            gameWon: this.props.boardInfo.gameWon
         });
     }
       handleSubmit = (event) =>  {
         event.preventDefault();
-        alert(this.state.value + ', you have a score of ' + this.state.clicks + ' clicks!');
-        const entry =  {users: {initials: this.state.value, clicks: this.state.clicks}}
-        this.props.sendScore(entry)
+        if (this.props.boardInfo.gameWon === true){
+          alert(this.state.value + ', you have a score of ' + this.props.boardInfo.clicks + ' clicks!');
+            const entry =  {users: {initials: this.state.value, clicks: this.props.boardInfo.clicks}}
+          this.props.sendScore(entry)
+        } else {
+          alert('Game is still in progress!!!');
+        }
       }
     
-      render = () =>  {
+      render = (event) =>  {
+
         return (
           <form onSubmit={this.handleSubmit}>
               <label>
-              Amount of clicks: {this.props.click} {"        | "}     
+              Amount of clicks: {this.props.boardInfo.clicks} {"        | "}     
             </label>
             <label>
               Initials:

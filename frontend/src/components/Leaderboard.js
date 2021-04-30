@@ -21,7 +21,7 @@ class Leaderboard extends React.Component {
     render = () => {
         return (
             <div className="highscores">
-              <h1>TOP SCORES!</h1>
+              <h1>Top 20 Score!</h1>
               {this.handleLoading()}
             </div>
           );
