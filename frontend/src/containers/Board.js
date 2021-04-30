@@ -20,7 +20,7 @@ class Board extends Component {
                     y: j,
                     isHit: false,
                     isMiss: false,
-                    ship: false,
+                    squid: false,
                     revealed: false
                 }
             }
@@ -28,16 +28,16 @@ class Board extends Component {
         return data
     }
 
-    placeShips(data)  {
-      data[0][0].ship = true;
-      data[0][1].ship = true;
-      data[1][0].ship = true;
-      data[1][1].ship = true;
-      data[1][2].ship = true;
-      data[2][0].ship = true;
-      data[2][1].ship = true;
-      data[2][2].ship = true;
-      data[2][3].ship = true;
+    placeSquids(data)  {
+      data[0][0].squid = true;
+      data[0][1].squid = true;
+      data[1][0].squid = true;
+      data[1][1].squid = true;
+      data[1][2].squid = true;
+      data[2][0].squid = true;
+      data[2][1].squid = true;
+      data[2][2].squid = true;
+      data[2][3].squid = true;
       //this.getRandomNumber(data, 2)
       //this.getRandomNumber(data, 3)
       //this.getRandomNumber(data, 4)
@@ -48,14 +48,14 @@ class Board extends Component {
       let x = Math.floor((Math.random() * 1000) + 1) % 17;
       let y = Math.floor((Math.random() * 1000) + 1) % 17;
       let ori = Math.floor((Math.random() * 1000) + 1) % 2;
-      if (data[x][y].ship === true){
+      if (data[x][y].squid === true){
         this.getRandomNumber(data, numbers)
       }
       for (let i = 0; i < numbers; i++) {
         if (ori === 1) {
-          data[x+i][y].ship = true
+          data[x+i][y].squid = true
         } else {
-          data[x][y+i].ship = true
+          data[x][y+i].squid = true
         }
       }
       return 
@@ -63,7 +63,7 @@ class Board extends Component {
 
     initBoardData(height, width) {
         let data = this.createEmptyArray(height, width);
-        data = this.placeShips(data);
+        data = this.placeSquids(data);
         return data;
     }
 
@@ -109,11 +109,11 @@ class Board extends Component {
         let updatedSquidCount = this.state.remainingSquids
         let winner = false
         data.revealed = true
-        if (data.ship === true && data.isHit === false){
+        if (data.squid === true && data.isHit === false){
           data.isHit = true
           updatedSquidCount -= 1
         }
-        if (data.ship === false){
+        if (data.squid === false){
           data.isMiss = true
         }
         if (updatedSquidCount === 0){
