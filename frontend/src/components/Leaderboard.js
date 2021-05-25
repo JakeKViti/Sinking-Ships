@@ -3,18 +3,16 @@ import { fetchLeaderboard } from "../actions/fetchLeaderboard";
 import { connect } from 'react-redux'
 import Highscore from './Highscore.js'
 
-
-
 class Leaderboard extends React.Component {
 
     componentDidMount = () => {
-       this.props.fetchLeaderboard()
+      this.props.fetchLeaderboard()
     }
 
     handleLoading = () => {
         console.log(this.props.entries)
         if(this.props.entries.length !== 0) {
-            return <Highscore entries={this.props.entries} />
+          return <Highscore entries={this.props.entries} />
         }
     }
 
@@ -28,7 +26,7 @@ class Leaderboard extends React.Component {
     }
 };
 
-const mapDispatchToProps = state => {
+const mapStateToProps = state => {
     return {
       entries: state.entries,
       loading: state.loading
@@ -36,4 +34,4 @@ const mapDispatchToProps = state => {
   }
 
 
-  export default connect(mapDispatchToProps, { fetchLeaderboard })(Leaderboard)
+  export default connect(mapStateToProps, { fetchLeaderboard })(Leaderboard)

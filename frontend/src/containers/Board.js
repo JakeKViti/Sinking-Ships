@@ -3,29 +3,28 @@ import Cell from '../components/Cell.js'
 import Info from '../components/Info.js'
 class Board extends Component {
     state = {
-        boardData: this.initBoardData(this.props.height, this.props.width),
-        gameWon: false,
-        clicks: 0,
-        remainingSquids: 9
+      boardData: this.initBoardData(this.props.height, this.props.width),
+      gameWon: false,
+      clicks: 0,
+      remainingSquids: 9
     }
     
     createEmptyArray(height, width) {
-        let data = []
-        
-        for (let i = 0; i < height; i++){
-            data.push([]);
-            for (let j = 0; j < width; j++) {
-                data[i][j] = {
-                    x: i,
-                    y: j,
-                    isHit: false,
-                    isMiss: false,
-                    squid: false,
-                    revealed: false
-                }
-            }
+      let data = []
+      for (let i = 0; i < height; i++){
+        data.push([]);
+        for (let j = 0; j < width; j++) {
+          data[i][j] = {
+            x: i,
+            y: j,
+            isHit: false,
+            isMiss: false,
+            squid: false,
+            revealed: false
+          }
         }
-        return data
+      }
+      return data
     }
 
     placeSquids(data)  {
@@ -57,30 +56,29 @@ class Board extends Component {
         } else {
           data[x][y+i].squid = true
         }
-      }
-      return 
+      } 
     }
 
     initBoardData(height, width) {
-        let data = this.createEmptyArray(height, width);
-        data = this.placeSquids(data);
-        return data;
+      let data = this.createEmptyArray(height, width);
+      data = this.placeSquids(data);
+      return data;
     }
 
     renderBoard = (data) =>  {
         return data.map((datarow) => {
           return datarow.map((dataitem) => {
             return (
-              <div key={dataitem.x * datarow.length + dataitem.y}>
-                <Cell
-                 onClick={() => this.handleCellClick(dataitem)}
-                 value={dataitem}
-                 />
-              </div>
-            );
-          })
-        });
-      }
+            <div key={dataitem.x * datarow.length + dataitem.y}>
+              <Cell
+                onClick={() => this.handleCellClick(dataitem)}
+                value={dataitem}
+              />
+            </div>
+          );
+        })
+      });
+    }
 
       renderInfo = (data) => {
         return (

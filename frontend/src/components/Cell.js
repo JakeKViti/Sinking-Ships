@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-
 class Cell extends Component { 
   
     getValue = () => {
       const { value } = this.props;
-
         if (!value.revealed){
           return "?"
         }
@@ -28,7 +26,4 @@ class Cell extends Component {
       }
     }
     
-    
-
-
 export default Cell;
