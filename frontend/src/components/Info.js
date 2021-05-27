@@ -13,9 +13,6 @@ export class Info extends Component {
     value: '',
     activeButton: true
   };
-        
-  this.handleChange = this.handleChange.bind(this);
-  this.handleSubmit = this.handleSubmit.bind(this);
   }
     
   handleChange = (event) => {
@@ -39,7 +36,7 @@ export class Info extends Component {
     }
   }
 
-  render = () =>  {
+  render() {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>

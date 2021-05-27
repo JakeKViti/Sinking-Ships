@@ -14,7 +14,7 @@ class Cell extends Component {
         }
       }
 
-      render = () => {
+      render() {
         let className = "cell"
         return (
           <div

@@ -16,7 +16,7 @@ class Leaderboard extends React.Component {
         }
     }
 
-    render = () => {
+    render() {
         return (
             <div className="highscores">
               <h1>Top 20 Score!</h1>

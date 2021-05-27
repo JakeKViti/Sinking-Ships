@@ -129,7 +129,7 @@ class Board extends Component {
 
       
 
-      render = () => {
+      render() {
         return (
             <div className="board">
               { this.renderInfo(this.state)}
