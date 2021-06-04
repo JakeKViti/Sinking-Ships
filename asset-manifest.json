@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/sinking-squids/static/css/main.c10d7b4b.chunk.css",
-    "main.js": "/sinking-squids/static/js/main.697ac052.chunk.js",
-    "main.js.map": "/sinking-squids/static/js/main.697ac052.chunk.js.map",
-    "runtime-main.js": "/sinking-squids/static/js/runtime-main.fb68fc07.js",
-    "runtime-main.js.map": "/sinking-squids/static/js/runtime-main.fb68fc07.js.map",
-    "static/js/2.a857fe98.chunk.js": "/sinking-squids/static/js/2.a857fe98.chunk.js",
-    "static/js/2.a857fe98.chunk.js.map": "/sinking-squids/static/js/2.a857fe98.chunk.js.map",
-    "index.html": "/sinking-squids/index.html",
-    "static/css/main.c10d7b4b.chunk.css.map": "/sinking-squids/static/css/main.c10d7b4b.chunk.css.map",
-    "static/js/2.a857fe98.chunk.js.LICENSE.txt": "/sinking-squids/static/js/2.a857fe98.chunk.js.LICENSE.txt"
+    "main.css": "/Sinking-Squids/static/css/main.c10d7b4b.chunk.css",
+    "main.js": "/Sinking-Squids/static/js/main.697ac052.chunk.js",
+    "main.js.map": "/Sinking-Squids/static/js/main.697ac052.chunk.js.map",
+    "runtime-main.js": "/Sinking-Squids/static/js/runtime-main.01627a6f.js",
+    "runtime-main.js.map": "/Sinking-Squids/static/js/runtime-main.01627a6f.js.map",
+    "static/js/2.a857fe98.chunk.js": "/Sinking-Squids/static/js/2.a857fe98.chunk.js",
+    "static/js/2.a857fe98.chunk.js.map": "/Sinking-Squids/static/js/2.a857fe98.chunk.js.map",
+    "index.html": "/Sinking-Squids/index.html",
+    "static/css/main.c10d7b4b.chunk.css.map": "/Sinking-Squids/static/css/main.c10d7b4b.chunk.css.map",
+    "static/js/2.a857fe98.chunk.js.LICENSE.txt": "/Sinking-Squids/static/js/2.a857fe98.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.fb68fc07.js",
+    "static/js/runtime-main.01627a6f.js",
     "static/js/2.a857fe98.chunk.js",
     "static/css/main.c10d7b4b.chunk.css",
     "static/js/main.697ac052.chunk.js"
