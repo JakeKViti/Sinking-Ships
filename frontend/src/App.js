@@ -15,10 +15,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NavBar />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/game" component={Game} />
-        <Route exact path="/rules" component={Rules} />
-        <Route exact path="/leaderboard" component={Leaderboard} />
+        <Route exact path="/Sinking-Squids/" component={Home} />
+        <Route exact path="/Sinking-Squids/game" component={Game} />
+        <Route exact path="/Sinking-Squids/rules" component={Rules} />
+        <Route exact path="/Sinking-Squids/leaderboard" component={Leaderboard} />
       </header>
     </div>
     </Router>
