@@ -1,4 +1,5 @@
 import React from 'react';
+import Sort from "./Sort.js"
 import { fetchLeaderboard } from "../actions/fetchLeaderboard";
 import { connect } from 'react-redux'
 import Highscore from './Highscore.js'
