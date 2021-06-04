@@ -3,7 +3,7 @@ import React from 'react';
       render() {
         return (
           <ol id="leaderboard">
-            {this.state.scores.map(users => 
+            {this.props.entries.map(users => 
             <div key={users.id}>
               <li>
                 {users.initials} with {users.clicks} shots  
