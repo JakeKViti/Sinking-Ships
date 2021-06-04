@@ -19,6 +19,8 @@ class Leaderboard extends React.Component {
     render() {
         return (
             <div className="highscores">
+              <p>Sorry, If you are here from jakekviti.github.io/Sinking-Squids, Leaderboard is currently unavaliable.</p>
+              <p>While I attempt to implement it into the online verson, try to beat my personal best of 104 shots</p>
               <h1>Top 20 Score!</h1>
               {this.handleLoading()}
             </div>

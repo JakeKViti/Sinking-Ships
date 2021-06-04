@@ -12,6 +12,9 @@ class Cell extends Component {
         if (value.isMiss) {
           return "💦";
         }
+        if (value.revealed){
+          return "💦";
+        }
       }
 
       render() {

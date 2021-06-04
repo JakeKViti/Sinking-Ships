@@ -27,7 +27,10 @@ export class Info extends Component {
   handleSubmit = (event) =>  {
     event.preventDefault();
     if (this.props.boardInfo.gameWon === true && this.state.activeButton === true && this.state.value.length !== 0){
-      alert(this.state.value + ', you have a score of ' + this.props.boardInfo.clicks + ' clicks!');
+      alert("Sailor " + this.state.value + '!, you have a score of ' + this.props.boardInfo.clicks + ' shots!');
+      if (this.props.boardInfo.clicks < 104){
+        alert('VAIT! ' + this.props.boardInfo.clicks + '????? SAILOR ZAT BEATS ZE CAPTAINS BEST! Send a Pic to @JakeKViti on Twitter and ze captain vill congratulate you')
+      }
       const entry =  {users: {initials: this.state.value, clicks: this.props.boardInfo.clicks}}
       this.props.sendScore(entry)
       this.setState({activeButton: false})

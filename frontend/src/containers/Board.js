@@ -28,18 +28,18 @@ class Board extends Component {
     }
 
     placeSquids(data)  {
-      //data[0][0].squid = true;
-      //data[0][1].squid = true;
-      //data[1][0].squid = true;
-      //data[1][1].squid = true;
-      //data[1][2].squid = true;
-      //data[2][0].squid = true;
-      //data[2][1].squid = true;
-      //data[2][2].squid = true;
-      //data[2][3].squid = true;
-      this.getRandomNumber(data, 2)
-      this.getRandomNumber(data, 3)
-      this.getRandomNumber(data, 4)
+      data[0][0].squid = true;
+      data[0][1].squid = true;
+      data[1][0].squid = true;
+      data[1][1].squid = true;
+      data[1][2].squid = true;
+      data[2][0].squid = true;
+      data[2][1].squid = true;
+      data[2][2].squid = true;
+      data[2][3].squid = true;
+      //this.getRandomNumber(data, 2)
+      //this.getRandomNumber(data, 3)
+      //this.getRandomNumber(data, 4)
       return (data);
     }
 
