@@ -11,6 +11,9 @@ Add this to a new folder:
 4. Run rails s -p 3001(server) within the backend folder
 5. run npm install, then npm start within the frontend folder
 
+OR
+Go to: https://jakekviti.github.io/Sinking-Squids
+
 ## Usage 
 When the user opens the site, there is a greeting message and 4 links on the NavBar. Here is what each link does
 
