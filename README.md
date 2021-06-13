@@ -1,4 +1,6 @@
 ## Sinking Squids
+![Demo Gif](https://github.com/JakeKViti/Sinking-Squids/blob/main/public/gifs/ezgif.com-gif-maker%20(2).gif?raw=true)
+
 "RED ALERT! ALL HANDS ON DECK!"
 In this project, there are 3 groups of squids approaching. Can you find them all in this battleship inspired game?
 
